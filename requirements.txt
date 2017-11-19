@@ -1,0 +1,4 @@
+Flask==0.10.1
+tensorflow==1.4.0
+Pillow==4.3.0
+flask_api==1.1b1
