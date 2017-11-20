@@ -27,9 +27,13 @@ def load_graph():
     return sess, softmax_tensor, label_lines
 
 
-SESS, GRAPH_TENSOR, LABELS = load_graph()
+#SESS, GRAPH_TENSOR, LABELS = load_graph()
 
 app = FlaskAPI(__name__)
+
+@app.route("/")
+def ping():
+    return { "success": True }
 
 @app.route("/classify/", methods=["POST"])
 def classifyImage():
@@ -39,6 +43,8 @@ def classifyImage():
   data = { "success": False }
   image = request.data.get("image", None)
   temp = tempfile.NamedTemporaryFile()
+
+  return { "success": True, "acne": 0.5, "skin cancer": 0.2 }
 
   if image is not None:
     plain_data = b64decode(image)
