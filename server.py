@@ -2,7 +2,7 @@ import io
 import os
 import tempfile
 
-import tensorflow as tf
+#import tensorflow as tf
 from PIL import Image
 from base64 import b64decode
 from flask import request
